@@ -1,0 +1,27 @@
+1. data mon sesuai no dewe yo ndes. trutama sale_register karo mon_databts;
+2. tambah field teknisi_maintenance "status_kunjungan"
+ALTER TABLE  `teknisi_maintenance` ADD  `status_kunjungan` ENUM(  'KUNJUNGAN',  'BELUM',  'REMOTE' ) NOT NULL ;
+
+3. Merubah struktur tabel teknisi_maintenance field tanggal_komplen manjadi auto stamp
+ALTER TABLE  `teknisi_maintenance` CHANGE  `tanggal_komplen`  `tanggal_komplen` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL ;
+
+4. Menambah field di tabel teknisi_maintenance field = "teknisi_komplain"
+ALTER TABLE  `teknisi_maintenance` ADD  `teknisi_komplain` VARCHAR( 100 ) NOT NULL ;
+
+5. Mon_lokasibts dirubah struktur tablenya. logintude dan latitude di hapus di tambah telp dan koordinat
+ALTER TABLE `mon_lokasibts`
+  DROP `longtitude`,
+  DROP `latitude`;
+
+  ALTER TABLE  `mon_lokasibts` ADD  `telp` VARCHAR( 100 ) NOT NULL AFTER  `alamat_bts` ,
+ADD  `koordinat` TEXT NOT NULL AFTER  `telp` ;
+
+6. Menambah field cs di table teknisi_maintenance
+ALTER TABLE  `teknisi_maintenance` ADD  `penerima_komplen` TEXT NOT NULL AFTER  `biaya` ;
+
+7. Merubah field status pada teknisi_maintenance menjadi : Baru, Penjadwalan, Antrian, Selesai
+ALTER TABLE  `teknisi_maintenance` CHANGE  `status`  `status` ENUM(  'Baru',  'Penjadwalan',  'Antrian',  'Selesai' ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ;
+
+8. Menambah field ip publik di sale_register
+ALTER TABLE  `sale_register` ADD  `data_ip_publik` TEXT NOT NULL AFTER  `ip` ;
+

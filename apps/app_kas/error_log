@@ -1,0 +1,8 @@
+[09-Oct-2018 13:36:35 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/cji/public_html/apps/app_kas/function.php on line 16
+[09-Oct-2018 13:36:35 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/cji/public_html/apps/app_kas/function.php on line 25
+[09-Oct-2018 13:36:35 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/cji/public_html/apps/app_kas/function.php on line 7
+[09-Oct-2018 13:36:35 Asia/Jakarta] PHP Warning:  Invalid argument supplied for foreach() in /home/cji/public_html/apps/app_kas/page_dashboard.php on line 127
+[09-Oct-2018 13:36:35 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/cji/public_html/apps/app_kas/function.php on line 7
+[09-Oct-2018 13:36:35 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/cji/public_html/apps/app_kas/function.php on line 16
+[09-Oct-2018 13:36:35 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /home/cji/public_html/apps/app_kas/function.php on line 25
+[09-Oct-2018 13:37:43 Asia/Jakarta] PHP Warning:  mysqli::mysqli(): (HY000/1044): Access denied for user 'cji'@'localhost' to database 'appsolon_app' in /home/cji/public_html/koneksi/koneksi.php on line 15

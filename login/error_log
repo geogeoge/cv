@@ -1,0 +1,5 @@
+[13-Dec-2017 01:34:53 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/appsolonetnet/public_html/koneksi/koneksi.php:18) in /home/appsolonetnet/public_html/login/function.php on line 22
+[16-Apr-2018 14:16:26 Asia/Jakarta] PHP Warning:  mysqli::mysqli(): (HY000/2002): No such file or directory in /home/appsolonetnet/public_html/koneksi/koneksi.php on line 9
+[16-Apr-2018 14:16:32 Asia/Jakarta] PHP Warning:  mysqli::mysqli(): (HY000/2002): No such file or directory in /home/appsolonetnet/public_html/koneksi/koneksi.php on line 9
+[16-Apr-2018 14:16:40 Asia/Jakarta] PHP Warning:  mysqli::mysqli(): (HY000/2002): No such file or directory in /home/appsolonetnet/public_html/koneksi/koneksi.php on line 9
+[16-Apr-2018 14:16:47 Asia/Jakarta] PHP Warning:  mysqli::mysqli(): (HY000/2002): No such file or directory in /home/appsolonetnet/public_html/koneksi/koneksi.php on line 9

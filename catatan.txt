@@ -1,0 +1,74 @@
+//ROUTING SESSION
+1. index di direktori utama
+2. index di direktori login
+3. index di direktori apps
+3. index di direktori app_accounting
+4. index di direktori app_billing
+5. index di direktori app_marketing
+
+//app_billing
+belum ada catatan yang berarti
+
+//app_marketing
+$id_login_marketing berada di folder index
+
+rubah database
+tgl 11/03
+
+//Menambah Item Tambahan Pada Sale Register
+ALTER TABLE  `sale_register` ADD  `tambahan_1` VARCHAR( 100 ) NOT NULL AFTER  `harga_tower` ,
+ADD  `jumlah_tambahan_1` INT NOT NULL AFTER  `tambahan_1` ,
+ADD  `status_tambahan_1` ENUM(  'TIDAK PAKAI',  'BELI',  'DIPINJAMI' ) NOT NULL AFTER  `jumlah_tambahan_1` ,
+ADD  `harga_tambahan_1` INT NOT NULL AFTER  `status_tambahan_1` ,
+ADD  `tambahan_2` VARCHAR( 100 ) NOT NULL AFTER  `harga_tambahan_1` ,
+ADD  `jumlah_tambahan_2` INT NOT NULL AFTER  `tambahan_2` ,
+ADD  `status_tambahan_2` ENUM(  'TIDAK PAKAI',  'BELI',  'DIPINJAMI' ) NOT NULL AFTER  `jumlah_tambahan_2` ,
+ADD  `harga_tambahan_2` INT NOT NULL AFTER  `status_tambahan_2` ;
+
+
+//Menambah Enum Penjadwalan
+ALTER TABLE  `master_login` CHANGE  `level`  `level` ENUM(  'ADMINISTRASI',  'ACCOUNTING',  'BILLING',  'MARKETING',  'LABELING_ADMIN',  'LABELING_TEKNISI',  'ACCOUNTING_ADMIN', 'ACCOUNTING_KASIR',  'TOKO',  'CHRISTELLA',  'ADMIN_MARKETING',  'TEKNISI',  'PENJADWALAN' ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ;
+
+//Menambah Item Penjadwalan
+INSERT INTO  `appsolon_app`.`master_login` (
+`id_user` ,
+`nama_user` ,
+`username` ,
+`password` ,
+`level` ,
+`ekstra`
+)
+VALUES (
+'PE001',  'INDRY SETIAWAN',  'indry',  'penjadwalan',  'PENJADWALAN',  ''
+);
+
+
+//membuat tanggal_penjadwalan 1995-03-02 dimana tanggal_penajdwalan='0000-00-00' and status='Penjadwalan'
+update sale_register set tanggal_penjadwalan='1995-03-02' where tanggal_penjadwalan='0000-00-00' and status not like 'Penjadwalan'
+
+
+tgl 28/7/2018
+. membuat persebaran user jadi list
+
+
+-------------- APP Versi V 2.0.0 --------------------
+V 2.0.1
+- Buat aplikasi NOC
+	. MERUBAH TABLE level enum tambah NOC
+		ALTER TABLE  `master_login` CHANGE  `level`  `level` ENUM(  'ADMINISTRASI',  'ACCOUNTING',  'BILLING',  'MARKETING',  'LABELING_ADMIN',  'LABELING_TEKNISI',  'ACCOUNTING_ADMIN',  'ACCOUNTING_KASIR',  'TOKO',  'CHRISTELLA', 'ADMIN_MARKETING',  'TEKNISI',  'PENJADWALAN',  'MONITORING',  'MANAGEMEN',  'PERSEBARAN_USER',  'NOC' ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ;
+
+	. buat login NOC Yono level NOC
+		INSERT INTO  `appsolon_app`.`master_login` (
+		`id_user` ,
+		`nama_user` ,
+		`username` ,
+		`password` ,
+		`level` ,
+		`ekstra`
+		)
+		VALUES (
+		'NO01',  'SUYONO',  'yono',  'nocsolonet',  'NOC',  ''
+		);
+		
+	 . Menambah edit data close di app marketing
+		

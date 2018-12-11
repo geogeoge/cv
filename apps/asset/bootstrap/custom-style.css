@@ -1,0 +1,28 @@
+.session_user {
+	line-height: 20px;
+	position: relative;
+	display: block;
+	padding: 15px 15px;
+	color: white;
+}
+
+.scroll {
+	overflow-x: auto;
+}
+
+th {
+	text-align: center;
+}
+
+.login {
+	background-color: #3c8dbc;
+}
+
+.page_header {
+	border-bottom: 1px solid #eee;
+}
+
+.tombol_tambah {
+	float: right;
+	display: inline-block;
+}
