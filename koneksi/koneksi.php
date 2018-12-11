@@ -5,7 +5,7 @@ $user = 'cji';     // ini berlaku di xampp
 $pass = 'r4s4ht4k0kt4k0k';         // ini berlaku di xampp
 $db = 'cji_accounting';
 
-// Ini koneksi untuk maintenance
+// Ini koneksi untuk maintenance test
 // $host = 'localhost'; 
 // $user = 'root';     // ini berlaku di xampp
 // $pass = 'root';         // ini berlaku di xampp
