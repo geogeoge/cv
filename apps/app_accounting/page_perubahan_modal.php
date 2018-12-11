@@ -59,9 +59,6 @@ $tanggal_akhir_tahun_berjalan = $tanggal_periode;
 
           <table class="table table-condensed">
             <!-- //////////////////////////////////////////// PENDAPATAN //////////////////////////////////////////// -->
-            <tr>
-              <td colspan="5" style="border-top-width: 4px; border-top-color: black;"><strong>PERUBAHAN MODAL TAHUN SEBELUMNYA</strong></td>
-            </tr>
             <?php
             $penambahan_modal_yang_ditahan = $select->perubahan_modal_tampil_penambahan_modal($tanggal_awal_yang_ditahan, $tanggal_akhir_yang_ditahan);
             $penambahan_modal_tahun_sebelumnya = $select->perubahan_modal_tampil_penambahan_modal($tanggal_awal_tahun_sebelumnya, $tanggal_akhir_tahun_sebelumnya);
@@ -85,49 +82,14 @@ $tanggal_akhir_tahun_berjalan = $tanggal_periode;
             ?>
 
             <tr>
-              <td width="50">&nbsp;</td>
-              <td>Modal Awal</td>
-              <td width="200" align="right"><?php echo number_format($modal_awal,0,',','.');?></td>
-              <td width="200" align="right">&nbsp;</td>
-              <td width="200" align="right">&nbsp;</td>
+              <td colspan="5"><strong>PERUBAHAN MODAL TAHUN <?php echo date('Y', strtotime($tanggal_periode));?></strong></td>
             </tr>
             <tr>
               <td width="50">&nbsp;</td>
-              <td>Penambahan Modal Tahun <?php echo date('Y', strtotime('-1 years', strtotime($tanggal_periode)));?></td>
-              <td width="200" align="right"><?php echo number_format($penambahan_modal_tahun_sebelumnya,0,',','.');?></td>
+              <td>Modal Tahun Sebelumnya</td>
               <td width="200" align="right">&nbsp;</td>
+              <td width="200" align="right"><?php echo number_format($total_modal_tahun_sebelumnya,0,',','.');?></td>
               <td width="200" align="right">&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="50">&nbsp;</td>
-              <td>Laba/Rugi Tahun <?php echo date('Y', strtotime('-1 years', strtotime($tanggal_periode)));?></td>
-              <td width="200" align="right"><?php echo number_format($laba_rugi_tahun_sebelumnya,0,',','.');?></td>
-              <td width="200" align="right">&nbsp;</td>
-              <td width="200" align="right">&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="50">&nbsp;</td>
-              <td><strong>Jumlah Modal Tahun <?php echo date('Y', strtotime('-1 years', strtotime($tanggal_periode)));?></strong></td>
-              <td width="200" align="right"  style="border-top-width: 2px; border-top-color: black;"><strong><?php echo number_format($jumlah_modal_tahun_sebelumnya,0,',','.');?></strong></td>
-              <td width="200" align="right">&nbsp;</td>
-              <td width="200" align="right">&nbsp;</td>
-            </tr>
-            <tr>
-              <td width="50">&nbsp;</td>
-              <td><font style="margin-left: 20px;">~ Penarikan Modal Tahun <?php echo date('Y', strtotime('-1 years', strtotime($tanggal_periode)));?></font></td>
-              <td width="200" align="right"><?php echo number_format($penarikan_modal_tahun_sebelumnya,0,',','.');?></td>
-              <td width="200" align="right">&nbsp;</td>
-              <td width="200" align="right">&nbsp;</td>
-            </tr>
-            <tr>
-              <td colspan="2" align="center"><strong>TOTAL MODAL TAHUN <?php echo date('Y', strtotime('-1 years', strtotime($tanggal_periode)));?></strong></td>
-              <td width="200" align="right" style="border-top-width: 2px; border-top-color: black;">&nbsp;</td>
-              <td width="200" align="right"><strong><?php echo number_format($total_modal_tahun_sebelumnya,0,',','.');?><strong></td>
-              <td width="200" align="right">&nbsp;</td>
-            </tr>
-
-            <tr>
-              <td colspan="5"><strong>PERUBAHAN MODAL TAHUN BERJALAN</strong></td>
             </tr>
             <tr>
               <td width="50">&nbsp;</td>
@@ -154,12 +116,12 @@ $tanggal_akhir_tahun_berjalan = $tanggal_periode;
               <td width="50">&nbsp;</td>
               <td><font style="margin-left: 20px;">~ Penarikan Modal Tahun <?php echo date('Y', strtotime($tanggal_periode));?></font></td>
               <td width="200" align="right">&nbsp;</td>
-              <td width="200" align="right"><?php echo number_format($penarikan_modal_tahun_berjalan,0,',','.');?></td>
+              <td width="200" align="right">( <?php echo number_format($penarikan_modal_tahun_berjalan,0,',','.');?> )</td>
               <td width="200" align="right">&nbsp;</td>
             </tr>
 
             <tr style="background-color: #ddd; border-bottom-width: 4px; border-bottom-color: black;">
-              <td colspan="3" align="center" ><strong>PERUBAHAN MODAL TAHUN <?php echo date('Y', strtotime($tanggal_periode));?></strong></td>
+              <td colspan="3" align="center" ><strong>MODAL AKHIR</strong></td>
               <td width="200" align="right"  style="border-top-width: 3px; border-top-color: black;">&nbsp;</td>
               <td width="200" align="right"><strong><?php echo number_format($total_modal_tahun_berjalan,0,',','.');?></strong></td>
             </tr>

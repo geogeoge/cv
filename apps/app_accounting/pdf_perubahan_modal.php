@@ -85,44 +85,14 @@ $pdf->SetFillColor(255, 255, 255);
 $pdf->SetTextColor(0,0,0);
 
 $pdf->SetFont('Times','B',8);
-$pdf->Cell(190,5,'PERUBAHAN MODAL TAHUN SEBELUMNYA',TB,1,'L',220, 220, 220);
+$pdf->Cell(190,5,'PERUBAHAN MODAL TAHUN BERJALAN '.date('Y', strtotime($tanggal_periode)),TB,1,'L',220, 220, 220);
 
 $pdf->SetFont('Times','',8);
 $pdf->Cell(5,5,'',TB,0,'L',220, 220, 220);
-$pdf->Cell(110,5,'Modal Awal',TB,0,'L',220, 220, 220);
-$pdf->Cell(25,5,number_format($modal_awal,0,',','.'),TB,0,'R',220, 220, 220);
-$pdf->Cell(25,5,'',TB,0,'R',220, 220, 220);
-$pdf->Cell(25,5,'',TB,1,'R',220, 220, 220);
-
-$pdf->SetFont('Times','',8);
-$pdf->Cell(5,5,'',TB,0,'L',220, 220, 220);
-$pdf->Cell(110,5,'Penambahan Modal Tahun '.date('Y', strtotime('-1 years', strtotime($tanggal_periode))),TB,0,'L',220, 220, 220);
-$pdf->Cell(25,5,number_format($penambahan_modal_tahun_sebelumnya,0,',','.'),TB,0,'R',220, 220, 220);
-$pdf->Cell(25,5,'',TB,0,'R',220, 220, 220);
-$pdf->Cell(25,5,'',TB,1,'R',220, 220, 220);
-
-$pdf->SetFont('Times','',8);
-$pdf->Cell(5,5,'',TB,0,'L',220, 220, 220);
-$pdf->Cell(110,5,'Laba/Rugi Tahun '.date('Y', strtotime('-1 years', strtotime($tanggal_periode))),TB,0,'L',220, 220, 220);
-$pdf->Cell(25,5,number_format($laba_rugi_tahun_sebelumnya,0,',','.'),TB,0,'R',220, 220, 220);
-$pdf->Cell(25,5,'',TB,0,'R',220, 220, 220);
-$pdf->Cell(25,5,'',TB,1,'R',220, 220, 220);
-
-$pdf->SetFont('Times','',8);
-$pdf->Cell(10,5,'',TB,0,'L',220, 220, 220);
-$pdf->Cell(105,5,'~ Penarikan Modal Tahun '.date('Y', strtotime('-1 years', strtotime($tanggal_periode))),TB,0,'L',220, 220, 220);
-$pdf->Cell(25,5,'('.number_format($penarikan_modal_tahun_sebelumnya,0,',','.').')',TB,0,'R',220, 220, 220);
-$pdf->Cell(25,5,'',TB,0,'R',220, 220, 220);
-$pdf->Cell(25,5,'',TB,1,'R',220, 220, 220);
-
-$pdf->SetFont('Times','B',8);
-$pdf->Cell(115,5,'Total Modal Tahun '.date('Y', strtotime('-1 years', strtotime($tanggal_periode))),TB,0,'C',220, 220, 220);
+$pdf->Cell(110,5,'Modal Tahun Sebelumnya ',TB,0,'L',220, 220, 220);
 $pdf->Cell(25,5,'',TB,0,'R',220, 220, 220);
 $pdf->Cell(25,5,number_format($total_modal_tahun_sebelumnya,0,',','.'),TB,0,'R',220, 220, 220);
 $pdf->Cell(25,5,'',TB,1,'R',220, 220, 220);
-
-$pdf->SetFont('Times','B',8);
-$pdf->Cell(190,5,'PERUBAHAN MODAL TAHUN BERJALAN',TB,1,'L',220, 220, 220);
 
 $pdf->SetFont('Times','',8);
 $pdf->Cell(5,5,'',TB,0,'L',220, 220, 220);
@@ -150,7 +120,7 @@ $pdf->Cell(25,5,'',TB,1,'R',220, 220, 220);
 $total_aktiva = $total_aktiva + $total_jenis_account;
 $pdf->SetFont('Times','B',8);
 $pdf->SetFillColor(255, 204, 204);
-$pdf->Cell(165,5,'TOTAL AKTIVA',TB,0,'C',220, 220, 220);
+$pdf->Cell(165,5,'MODAL AKHIR',TB,0,'C',220, 220, 220);
 $pdf->Cell(25,5,number_format($total_modal_tahun_berjalan,0,',','.'),TB,1,'R',220, 220, 220);
 
 
